@@ -1,4 +1,4 @@
-#Here is a toy example of PCA from STATTREK
+#Here is a toy example of PCA from STATQuest
 
 
 
