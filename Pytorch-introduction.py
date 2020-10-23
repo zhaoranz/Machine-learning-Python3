@@ -14,6 +14,23 @@ testset = torch.utils.data.DataLoader(test, batch_size=10, shuffle=True)
 
 #batch size is 1. for the large sample size, cannot fit any realistic example on GPU   2. generalization avoiding arbitrary optimazation
 
+#visualized
+import matplotlib.pyplot as plt
+
+plt.imshow(data[0][0].view(28,29))
+plt.show()
+
+#make sure the dataset is balanced
+total=0
+counter_dict={0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
+for data in trainset:
+  Xs, ys=data
+  for y in ys:
+    counter_dict[imt(y)]+=1
+    total+=1
+for i in counter_dict:
+  print(f"{i}:{counter_dict[i]/total*100}")
+
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -39,9 +56,6 @@ print(net)
 x=torch.rand((28*28))
 X=x.view(-1,28*28)
 output=net(X)
-
-
-
     
     
     
