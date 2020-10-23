@@ -13,7 +13,9 @@ trainset = torch.utils.data.DataLoader(train, batch_size=10, shuffle=True)
 testset = torch.utils.data.DataLoader(test, batch_size=10, shuffle=True)
 
 #batch size is 1. for the large sample size, cannot fit any realistic example on GPU   2. generalization avoiding arbitrary optimazation
-#14
+
+import torch.nn as nn
+import torch.nn.functional as F
 
 
 
